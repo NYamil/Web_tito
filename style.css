@@ -1,0 +1,241 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin:0;
+  padding:0;
+}
+
+header{
+    background: #99F3BD;
+    
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  margin:1rem;
+  padding:0;  
+  background: #D2F6C5;
+}
+
+
+:root{
+    --main-radius:5px;
+    --main-padding:5px;
+}
+
+.container {
+    display: grid;
+    height: 60vh;
+    grid-template-columns: 0fr 1fr 1fr ;
+    grid-template-rows: 0.2fr 1.5fr 1.2fr ;
+    grid-template-areas: 
+        "nav nav nav "
+        "sidebar  main main "
+        "sidebar content0 content1 "
+        "sidebar footer footer";
+    grid-gap: 0.2rem;
+    font-family: "Inter", sans-serif;
+    text-align: center;
+
+}
+
+p {
+    text-justify: auto;
+    text-size-adjust: 80%;
+    font-size: 25px;
+    margin: 10px 50px 50px 50px;
+
+}
+
+.texto-verde {
+    color: #035422;
+    font-size: 27px;
+}
+nav {
+    
+    background-image: url(./img/larg.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    grid-area: nav;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+    padding-left: 20px 60px;
+    
+}
+
+.logo{
+    width: 120px;
+    height: 120px;
+
+}
+
+.titulo{
+    width: 700px;
+    height: 100px;
+    margin-right: 150px;
+}
+
+#main {
+    background: #D2F6C5;
+    grid-area: main;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+    display:flex;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+
+}
+    
+
+
+
+#posando{
+    height: 350px;
+    width: 350px;
+    filter: drop-shadow(10px 5px 5px #60b78e);
+ 
+    
+} 
+
+
+
+#saludo {
+    text-align:initial;
+    align-items: center;
+    
+}
+
+#sidebar {
+    grid-area: sidebar;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    background-image: linear-gradient(30deg, #28DF99, #D2F6C5);
+    border-top-right-radius: 80px;
+    height: 380px;
+}   
+
+#sidebar a {
+    font-size: 46px;
+    color: black;
+    display: block;
+    padding: 12px;
+    padding-left: 30px;
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+#sidebar a:hover {
+    color: #3f5efb;
+    background: #D2F6C5;
+    outline: none;
+    position: relative;
+    background-color: #D2F6C5;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+#sidebar a i {
+    margin-right: 55px;
+}
+
+#sidebar a:hover::after {
+    content: "";
+    position: absolute;
+    background-color: transparent;
+    bottom: 100%;
+    right: 0px;
+    height: 40px;
+    width: 35px;
+    border-bottom-right-radius: 33px;
+    box-shadow: 0 20px 0 0 #D2F6C5;
+  }
+
+#sidebar a:hover::before {
+    content: "";
+    position: absolute;
+    background-color: transparent;
+    top: 38px;
+    right: 0;
+    height: 40px;
+    width: 35px;
+    border-top-right-radius: 33px;
+    box-shadow: 0 -20px 0 0 #D2F6C5;
+  }
+
+
+#sidebar p {
+    margin: 0;
+    padding: 40px 0;
+  }
+
+body {
+    font-family: "Roboto";
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+  }
+
+
+li {
+    list-style-type:none;
+    font-size: 35px;
+}
+
+#content1 {
+    background: #Fba6F7D4;
+    grid-area: content1;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+    text-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+
+#content2 {
+    background: #F6F7D4;
+    grid-area: content2;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+}
+
+#content3 {
+    background: #F6F7D4;
+    grid-area: content3;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+}
+
+footer {
+    background: #28DF99;
+    grid-area: footer;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+}
+
+@media only screen and (max-width: 500px){
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.4fr 0.4fr 2.2fr 1.2fr 1.2fr 1.2fr 1fr;
+        grid-template-areas: 
+        "nav"
+        "sidebar"
+        "main"
+        "content1"
+        "content2"
+        "content3"
+        "footer";
+    }
+}
